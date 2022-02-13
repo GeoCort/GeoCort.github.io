@@ -57,6 +57,9 @@ body{
     grid-area:b;
     background-color: rgb(23, 22, 22);
     gap:2px;
+   width:100%;
+   height:auto;
+}
+img{
     width:100%;
-    height:auto;
 }
