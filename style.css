@@ -22,6 +22,10 @@ time, mark, audio, video {
 body{
     background-color:rgb(40, 40, 40);
 }
+.text-h{
+    font-size: 32px;
+    color:white;
+}
 /* navigation links */
 .nav-container{
     background-color: rgb(50, 49, 49,0.90);
@@ -35,21 +39,30 @@ body{
     display:inline-block;
     text-decoration: none;
     color:rgb(220, 220, 220);
-    padding:.6rem;
+    padding:.8rem;
 }
 .nav-link:hover{
     color:rgb(183, 183, 46);
     background-color:rgb(21, 21, 21);
+    border-radius:3px;
 }
 .main-content{
-    padding:2rem;
 }
 /* hero version 1 */
 .hero-container{
     background-color:rgb(40,40,40,.8);
     border:1px solid rgb(132, 109, 109);
     font-size:18px;
+    display:grid;
+    grid-template-columns: 100px auto;
+    min-height: 80svh;
+}
+.sidebar-container{
+    background-color:white;
     display:flex;
+    justify-content: center;
+    max-width:80px;
+
 }
 /* sidebar of hero */
 .sidebar{
@@ -57,9 +70,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 100px;
-    width:100px;
-    border:1px solid white;
+    width:100%;
+    border-radius:5px;
+    background-color:rgba(249, 249, 249, 0.1);
+
+
+    border:1px solid rgba(191, 191, 191, 0.1);
 }
 .sidebar> li{
     width:100%;
