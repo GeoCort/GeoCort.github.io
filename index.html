@@ -2,68 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    
     <title>Document</title>
 </head>
 <body>
     <!-- navigatino -->
     <header class="nav-container">
-        <nav class="nav">
+        <nav class="nav" id="desktop-nav">
             <a href="#home" class="nav-link" >Home</a>
-            <a href="#home" class="nav-link" >Home</a>
-            <a href="#home" class="nav-link" >Home</a>
-            <a href="#home" class="nav-link" >Home</a>
+            <a href="#About-Me" class="nav-link" >About Me</a>
+            <a href="#Skills" class="nav-link" >Skills</a>
+            <a href="#Project" class="nav-link" >Projects</a>
         </nav>
     </header>
     <main class="main-content">
         <!-- hero section -->
         <section class="hero-container">
             <!-- social media bar -->
-            <div class="sidebar-container">
-                <ul class="sidebar"><li>the</li>
-                    <li>side</li>
-                    <li>bar</li></ul>
-            </div>
-            <div>
                 <h1 class="text-h">George Cortes</h1>
-                <img>
-                <p>Thisdbfhdbfhjbfdjhbfjh  is some filler text that can help you learn about me</p>
-            </div>
+                <img class="hero-img-portf">
+                <p>Seeking employment in software or web development</p>
+                <div class="btn-hero-container">
+                    <button class="btn hero-btn" >CV</button>
+                    <button class="btn hero-btn" >Projects</button>
+                </div>
         </section>
+        <!-- skills  -->
+        <section class="skills">
+            <h2 class="text-h">Skills</h2>
+            <div class="skills-container">
+                <div class="card-container">
+                    <i class="fa-brands fa-square-js fa-5x svg"></i>     
+                <span class="card-title">Javascript</span> 
+                      </div>
+            </div>
+        </section>        
         <!-- about me -->
-        <section>
-            <div class="aboutMe">
+        <section class="aboutMe">
+            <div class="about-container">
                 <div class="img-left"></div>
                 <div class="about-info">
                     <h2 class="text-h"> About Me</h2>
-                    <p> Recently graduated from Cal State East Bay University with a Bachelors in Computer Science.
-                        Looking to pursue a career that challenges me in problem solving and elevate my skills. 
+                    <p> I recently graduated from Cal State East Bay University with a Bachelors in Computer Science.
                     </p>
-                    <p>My main journey towards Computer Science has alwasy been in Web Development.
-                        Web Dev has made it possible for me to learn various languages and discover solving problems
-                        that I would have never normall done if it wasnt for web dev.
+                    <p>My main specialization has always been Web Development.
                     </p>
                     <p>Im also particularily interested in focusin on Machine Learning, data science, analytics, and utilizing these tools to create visualized data on Web Platforms</p>
-                    <p>I love dogs, coffee, and feeling like im working on towards a goal. This is reflected professionally and in my own personal life.</p>
-                    <p></p>
                 </div>
                 
             </div>
         </section>
-        <!-- skills  -->
-        <section class="skills">
-            <div class="card-container">
-                <h2>Skill</h2>
-                <!-- <img>  or FAVICON -->
-                <!-- responsive/ fance animation -->
-                <p>description stuff for this particular skill blah blah blah</p>
-            </div>
-        </section>
+
         <!-- projects -->
         <section class="projects">
             <article></article>
         </section>
     </main>
+    <script src="https://kit.fontawesome.com/b365b8b6c3.js" crossorigin="anonymous"></script>
 </body>
 </html>
