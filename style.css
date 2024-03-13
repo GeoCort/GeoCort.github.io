@@ -24,6 +24,7 @@ body{
 }
 .text-h{
     font-size: 32px;
+    text-align: center;
     color:white;
 }
 /* navigation links */
@@ -83,4 +84,17 @@ body{
     text-align: center;
     border-bottom:1px solid rgb(104, 104, 25);
     display:block;
+}
+
+/* about me sectino */
+.aboutMe{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 40vh;
+    padding:4rem;
+}
+.about-info{
+    text-align: left;
+    line-height: 1.5;
 }
