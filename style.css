@@ -38,9 +38,12 @@ body{
     font-size: 5rem;
     font-weight: 700;
     text-align: center;
-    color:var(--smokey);
+    color:var(--space-gray);
     padding-top:1rem;
     padding-bottom: 3rem;
+}
+.reverse-text{
+    color:var(--stone);
 }
 /* navigation links */
 .nav-container{
@@ -70,6 +73,9 @@ body{
 }
 /* hero version 1 */
 .hero-container{
+    background-image: url("./assets/grayPlain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     border-top: 1px solid black;
     box-shadow: 2px 2px 2px 2px rgb(80, 78, 8);
     font-size:18px;
@@ -89,7 +95,7 @@ body{
 .btn{
     width:100px;
     border:none;
-    background-color: rgb(4, 3, 11);
+    background-color: var(--space-gray);
     color:white;
     padding:.7rem .4rem .7rem .4rem;
     border-radius: 10px;
@@ -116,7 +122,7 @@ body{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: var(--stone);
+    background-color: var(--marble);
     padding:4rem;
 }
 .about-container{
@@ -124,21 +130,23 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap:1rem;
+    gap:3rem;
     min-height: 100%;
 }
 .about-info{
-    border:1px solid green;
     text-align: left;
     font-size:24px;
-    line-height: 1.5;
+    line-height: 1.7;
     font-weight: 500;
     padding:2rem;
+    padding-left: 3.5rem;
     max-width: 60%;
 }
 .about-img-portf{
-    height:300px;
-    width: 300px;
+    height:350px;
+    width: 350px;
+    min-height: 300px;
+    min-width: 300px;
     margin:1rem;
     border-top-left-radius: 500px;
     border-top-right-radius: 500px;
@@ -146,8 +154,9 @@ body{
 }
 /* skills section */
 .skills{
-    background-color:var(stone);
-    min-height: 40vh;
+    background-color:var(--space-gray);
+    color:var(--stone);
+    min-height: 60vh;
     padding:4rem;
 }
 
@@ -158,8 +167,8 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 5px;
-    border:4px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    border:4px solid var(--stone);
     box-shadow: 0 0 0 1px rgb(44, 35, 35);
 }
 .card-title{
@@ -172,24 +181,25 @@ body{
     justify-content: center;
     gap:2rem;
     flex-wrap: wrap;
+    border:4px solid black;
 }
 
-.svg{
-    font-size: 25px;
-    /* background-color: yellow; */
-}
 .card-container:hover{
-    border:4px solid var(--mustard);
+    border:4px solid var(--marble);
     .svg{
-        color:var(--mustard);
+        color:white;    
     }
     .card-title{
-        color:var(--mustard);
+        color:var(--marble);  
     }
 }
 
 /* footer section */
 .footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
     height:25vh;
     background-color:var(--smokey);
 }
