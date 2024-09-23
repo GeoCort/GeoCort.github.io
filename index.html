@@ -126,13 +126,13 @@
          <section class="min-h-screen xl:px-[10%]">
             <h4 class="text-center text-zinc-600">Get to know more</h4>
             <h2 class="text-center text-stone-700 text-4xl font-bold py-5">About Me</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 ">
+            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  ">
                 <!-- about image -->
-                <article class=" col-span-1 md:col-span-2  bg-zinc-700 lg:col-span-1">
-                    <img src="assets/placeholder-image.jpg" class="w-full h-full">
+                <article class=" col-span-1 md:col-span-2 lg:col-span-1 bg-zinc-700">
+                    <img src="assets/placeholder-image.jpg" class="w-full h-full object-cover">
                 </article>
                 <!-- experience -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-2 m-10 grid grid-cols-2 gap-10 md:row-start-2 lg:row-start-1 lg:col-start-2">
+                <div class="col-span-1 md:col-span-2  m-10 grid grid-cols-2 gap-10 lg:col-span-2  ">
                     <article class="border-4 border-stone-400 rounded-lg p-5 col-span-1 gap-10  text-center max-w-96 ">
                         <h4>icon</h4>
                         <h5 class="italic text-3xl text-zinc-600 p-2 text-center">Experience</h5>
@@ -150,8 +150,29 @@
             </div>
          </section>
         <!-- Contact -->
+         <section class="p-10">
+            <h2 class="text-center text-stone-700 text-4xl font-bold py-5">Contact Me</h2>
+            <form class="bg-zinc-700 rounded-xl p-10 w-10/12 xl:w-2/4 m-auto text-lg font-semibold text-slate-100 *:py-1">
+                <div class="flex flex-col">
+                    <label>First Name</label>
+                    <input class="p-1 px-2 rounded-md text-black " type="text" placeholder="First Name" required max="50"> 
+                </div>
+                <div class="flex flex-col">
+                    <label>Last Name</label><br/>
+                    <input class="p-1 px-2 rounded-md text-black " type="text" placeholder="Last Name" required>
+                </div>
+                <div class="flex flex-col">
+                    <label> Email</label><br>
+                    <input class="p-1 px-2 rounded-md text-black " type="email" placeholder="John@Appleseed.com" required>
+                </div>
+                <div class="flex flex-col">
+                    <label>Message</label><br>
+                    <textarea cass="p-1 px-2 rounded-lg text-black " rows="10" cols="50" class=""></textarea>
+                </div>
+            </form>
+         </section>
         <!-- Footer -->
-         <footer class="bg-zinc-100">
+         <footer class="bg-slate-600 h-12">
             Thanks for visiting
          </footer>
     </main>
