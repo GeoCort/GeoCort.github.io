@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/725392aa44.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "YOUR_PUBLIC_KEY",
+            });
+        })();
+    </script>
     <link rel="stylesheet" href="./output.css">
     <title>George Cortes' Website</title>
 </head>
@@ -43,7 +52,7 @@
                 <h2 class="text-5xl py-2  ">George Cortes</h2>
                 <h3 class="italic text-3xl text-zinc-600" >Web Developer</h3>
                 <div class="text-xl font-semibold flex gap-5 flex-col justify-center items-center sm:flex-row  ">
-                    <button class=" rounded-3xl shadow-lg p-4 w-40 border-2 border-stone-700 hover:text-slate-50 hover:bg-stone-700"><a href="/assets/files/ResumePDF.pdf" target="_blank">Download CV</a></button>
+                    <button class=" rounded-3xl shadow-lg p-4 w-44 border-2 border-stone-700 hover:text-slate-50 hover:bg-stone-700"><a href="/assets/files/ResumePDF.pdf" target="_blank">Download CV</a></button>
                     <a href="#contact"><button class="w-40 shadow-lg bg-stone-800 p-4 rounded-3xl text-slate-50 hover:bg-slate-50 hover:text-stone-700 hover:border-stone-700 hover:border-2 ">Get In Touch</button></a>
                 </div>
                 <!-- Icon Links -->
@@ -61,7 +70,7 @@
             <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
                 <!-- img -->
                 <div class="container ">
-                    <img src="/assets/project-images/craftify.jpeg " class="rounded-t-lg w-full md:h-60  object-cover">
+                    <img src="/assets/project-images/craftify.jpeg " class="rounded-t-lg w-full md:h-60 xl:h-72  object-cover">
                 </div>
                 <div class="p-5 text-slate-800">
                     <h4 class="text-xl font-semibold">Craftify</h4>
@@ -80,7 +89,7 @@
             <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
                 <!-- img -->
                 <div class="container ">
-                    <img src="/assets/project-images/hellhole.webp " class="rounded-t-lg w-full md:h-60  object-cover">
+                    <img src="/assets/project-images/hellhole.webp " class="rounded-t-lg w-full md:h-60  xl:h-72  object-cover">
                 </div>
                 <div class="p-5 text-slate-800">
                     <h4 class="text-xl font-semibold">HellHoleIO</h4>
@@ -98,7 +107,7 @@
             <!-- card -->
             <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all">
                 <div class="container ">
-                    <img src="/assets/project-images/logo.png " class="rounded-t-lg w-full  md:h-60 object-cover">
+                    <img src="/assets/project-images/logo.png " class="rounded-t-lg w-full  md:h-60  xl:h-72  object-cover">
                 </div>
                 <div class="p-5 text-slate-800">
                     <h4 class="text-xl font-semibold">Members Only</h4>
@@ -116,7 +125,7 @@
             </article>
             <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all">
                 <div class="container ">
-                    <img src="/assets//project-images/linux.webp" alt="Penguin that is the linux logo" class="rounded-t-lg w-full  md:h-60 object-cover">
+                    <img src="/assets//project-images/linux.webp" alt="Penguin that is the linux logo" class="rounded-t-lg w-full  md:h-60  xl:h-72  object-cover">
                 </div>
                 <div class="p-5 text-slate-800">
                     <h4 class="text-xl font-semibold">Operating System</h4>
@@ -133,7 +142,7 @@
             </article>
         </section>
         <!-- About -->
-         <section class=" lg:mx-[10%] py-10" id="about">
+         <section class=" lg:mx-[10%] py-12 pb-6" id="about">
             <h4 class="text-center text-zinc-600">Get to know more</h4>
             <h2 class="text-center text-stone-700 text-4xl font-bold py-5">About Me</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  ">
@@ -146,14 +155,14 @@
                     <article class="border-4 border-stone-400 rounded-lg p-5 col-span-1 gap-10  text-center m-auto h-full">
                         <i class="fa-solid fa-briefcase text-5xl text-stone-700"></i>
                         <h5 class="italic text-2xl ms:text-3xl text-zinc-600 p-2 text-center">Experience</h5>
-                        <p class="text-xl">Web Development - Postgress - Express - React - Node.js</p>
-                        <p class="text-xl">Android - Kotlin - Java</p>
+                        <p class="text-xl font-semibold">Web: Javascript, Node.js, Express, React, Postgress </p>
+                        <p class="text-xl font-semibold">Android: Kotlin, Java </p>
                     </article>
                     <article class="border-4 border-stone-400 rounded-md p-5 col-span-1 text-center text-lg m-auto h-full w-full">
                         <i class="fa-solid fa-award text-5xl text-stone-700"></i>
                         <h5 class="italic  text-zinc-600 p-2 text-center text-2xl ms:text-3xl">Education</h5>
-                        <p class="text-xl">B.S. in Computer Science</p>
-                        <p class="text-xl">A.A. in Business Administration</p>
+                        <p class="text-xl font-semibold">B.S. in Computer Science</p>
+                        <p class="text-xl font-semibold">A.A. in Business Administration</p>
                     </article>
                 </div>
             </div>

@@ -903,6 +903,10 @@ video {
   width: 100%;
 }
 
+.w-44 {
+  width: 11rem;
+}
+
 .max-w-\[80\%\] {
   max-width: 80%;
 }
@@ -2142,6 +2146,15 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2925,6 +2938,10 @@ video {
     height: 15rem;
   }
 
+  .md\:w-44 {
+    width: 11rem;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2936,6 +2953,11 @@ video {
   .md\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 
@@ -2997,6 +3019,10 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:h-72 {
+    height: 18rem;
+  }
+
   .xl\:w-2\/4 {
     width: 50%;
   }
