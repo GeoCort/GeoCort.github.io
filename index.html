@@ -20,7 +20,7 @@
 <body class="bg-slate-100 ">
     <header class="h-20  text-3xl flex justify-between items-center p-10 bg-slate-200">
         <div class="w-12 h-12 ">
-            <img src="/assets/project-images/customeLogo.png" class="rounded-full">
+            <img src="./assets/profile-imgs/pngtree-pink-cute-cat-icon-animal-png-yuri-png-image_8188672.png" class="rounded-full">
         </div>
         <nav class="lg:flex hidden items-center  gap-5"> 
             <a  href="/" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Home</a>
@@ -67,6 +67,24 @@
         <h2 id="projects" class="text-center text-stone-700 text-4xl font-bold py-10 row-span-1">Projects</h2>
         <section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12  gap-10 mx-[10%] " >
             <!-- Cards -->
+            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
+                <!-- img -->
+                <div class="container ">
+                    <img src="/assets/project-images/chirpyAI.webp " class="rounded-t-lg w-full md:h-60  xl:h-72  object-cover">
+                </div>
+                <div class="p-5 text-slate-800">
+                    <h4 class="text-xl font-semibold">Chirpy</h4>
+                    <p class="text-md min-h-28">Twitter Clone using React.js, PostgreSQL, Tailwind.CSS and Node.js</p>
+                    <!-- style tab  -->
+                    <div class="flex justify-between items-center">
+                        <span class="italic font-semibold  text-yellow-600 text-center px-2 py-1">Javascript</span>
+                        <div class="flex text-4xl ">
+                            <a href="https://github.com/GeoCort/Chirpy"><i class="fa-brands fa-github text-5xl hover:text-yellow-600"></i></a>
+                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
+                        </div>
+                    </div>
+                </div>
+            </article>
             <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
                 <!-- img -->
                 <div class="container ">
@@ -142,23 +160,6 @@
                 </div>
                 
             </article>
-            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all">
-                <div class="container ">
-                    <img src="/assets//project-images/linux.webp" alt="Penguin that is the linux logo" class="rounded-t-lg w-full  md:h-60  xl:h-72  object-cover">
-                </div>
-                <div class="p-5 text-slate-800">
-                    <h4 class="text-xl font-semibold">Operating System</h4>
-                    <p class="text-md min-h-28">Linux From Scratch system to reinforce the main components of a functioning operating system. Aggressive. </p>
-                    <!-- style tab  -->
-                    <div class="flex justify-between p-2 items-center">
-                        <span class="italic font-semibold  text-cyan-700 text-center px-2 py-1">C++ | Linux</span>
-                        <div class="flex gap-7 text-4xl items-center">
-                            <a href="https://github.com/GeoCort/Group3Craftify"><i class="fa-brands fa-github text-5xl hover:text-cyan-700"></i></a>
-                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
-                        </div>
-                    </div>
-                </div>
-            </article>
         </section>
         <!-- About -->
          <section class=" lg:mx-[10%] py-12 pb-6" id="about">
@@ -189,24 +190,20 @@
         <!-- Contact -->
          <section class="p-10 shadow-lg" id="contact">
             <h2 class="text-center text-stone-700 text-4xl font-bold py-5">Contact Me</h2>
-            <form class="bg-slate-200  shadow-xl rounded-lg p-10 xl:p-14 w-10/12 xl:w-2/4 m-auto text-xl font-semibold text-black  *:py-2">
+            <form id="form" class="bg-slate-200  shadow-xl rounded-lg p-10 xl:p-14 w-10/12 xl:w-2/4 m-auto text-xl font-semibold text-black  *:py-2">
                 <div class="flex flex-col gap-2">
-                    <label>First Name</label>
-                    <input class="p-1 px-2 rounded-md  " type="text" placeholder="First Name" required max="50"> 
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label>Last Name</label>
-                    <input class="p-1 px-2 rounded-md " type="text" placeholder="Last Name" required max="50">
+                    <label>Name</label>
+                    <input class="p-2 px-2 rounded-md  " type="text" placeholder="Name" required max="50"> 
                 </div>
                 <div class="flex flex-col gap-2">
                     <label> Email</label>
-                    <input class="p-1 px-2 rounded-md " type="email" placeholder="John@Appleseed.com" required max="100">
+                    <input class="p-2 px-2 rounded-md " type="email" name="email" placeholder="John@Appleseed.com" required max="100">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label>Message</label>
-                    <textarea class="rounded-lg p-2  " rows="10" cols="50"></textarea>
+                    <textarea name="message" class="rounded-lg p-2  " rows="10" cols="50"></textarea>
                 </div>
-                <button class=" rounded-xl w-full hover:bg-slate-50 hover:text-black mt-[20px] bg-slate-800 text-white"> Submit</button>
+                <button type="submit" class=" rounded-xl w-full hover:bg-slate-50 hover:text-black mt-[20px] bg-slate-800 text-white"> Submit</button>
             </form>
          </section>
         <!-- Footer -->
@@ -215,5 +212,6 @@
          </footer>
     </main>
     <script src="./script.js"></script>
+    <script src="./src/main.js"></script>
 </body>
 </html>
