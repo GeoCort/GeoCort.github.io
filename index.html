@@ -10,9 +10,28 @@
         (function() {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init({
-              publicKey: "YOUR_PUBLIC_KEY",
+              publicKey: "hfge1I3G7K-7HSa14",
             });
         })();
+    </script>
+    <script type="text/javascript">
+        setTest = ()=>{
+            document.getElementById("form").classList.add("bg-green-300")
+            document.getElementById('contactBtn').setAttribute("disabled", "")
+        }
+        window.onload = function() {
+            document.getElementById('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_if43gpd',"template_fvk3t0j", 'form', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        setTest()
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
     </script>
     <link rel="stylesheet" href="./output.css">
     <title>George Cortes' Website</title>
@@ -167,15 +186,15 @@
             <h2 class="text-center text-stone-700 text-4xl font-bold py-5">About Me</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  ">
                 <!-- about image -->
-                <article class=" col-span-1 md:col-span-2 lg:col-span-1 bg-zinc-700 max-w-[80%] m-auto lg:max-w-full">
-                    <img src="assets/placeholder-image.jpg" class="w-full h-full object-cover">
+                <article class=" col-span-1 md:col-span-2 lg:col-span-1 bg-zinc-700 max-w-[80%] m-auto lg:max-w-full rounded-lg">
+                    <img src="assets/profile-imgs/aboutMeimg.jpeg" class="max-w-96 rounded-lg  ">
                 </article>
                 <!-- experience -->
                 <div class="col-span-1 md:col-span-2  m-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:col-span-2  ">
                     <article class="border-4 border-stone-400 rounded-lg p-5 col-span-1 gap-10  text-center m-auto h-full">
                         <i class="fa-solid fa-briefcase text-5xl text-stone-700"></i>
                         <h5 class="italic text-2xl ms:text-3xl text-zinc-600 p-2 text-center">Experience</h5>
-                        <p class="text-xl font-semibold">Web: Javascript, Node.js, Express, React, Postgress </p>
+                        <p class="text-xl font-semibold">Web: Javascript, Python,  Node.js, Express, React, Postgress, Prisma ORM </p>
                         <p class="text-xl font-semibold">Android: Kotlin, Java </p>
                     </article>
                     <article class="border-4 border-stone-400 rounded-md p-5 col-span-1 text-center text-lg m-auto h-full w-full">
@@ -203,7 +222,7 @@
                     <label>Message</label>
                     <textarea name="message" class="rounded-lg p-2  " rows="10" cols="50"></textarea>
                 </div>
-                <button type="submit" class=" rounded-xl w-full hover:bg-slate-50 hover:text-black mt-[20px] bg-slate-800 text-white"> Submit</button>
+                <button id="contactBtn" type="submit" class=" rounded-xl w-full hover:bg-slate-50 hover:text-black mt-[20px] bg-slate-800 text-white"> Submit</button>
             </form>
          </section>
         <!-- Footer -->
