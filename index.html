@@ -3,234 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link href="./src/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/725392aa44.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init({
-              publicKey: "hfge1I3G7K-7HSa14",
+              publicKey: "rA6pviaY5hawoNkeN",
+              limitRate: {
+                // Set the limit rate for the application
+                id: 'app',
+                // Allow 1 request per 10s
+                throttle: 10000,
+  }
             });
         })();
-    </script>
-    <script type="text/javascript">
-        setTest = ()=>{
-            document.getElementById("form").classList.add("bg-green-300")
-            document.getElementById('contactBtn').setAttribute("disabled", "")
-        }
         window.onload = function() {
-            document.getElementById('form').addEventListener('submit', function(event) {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // these IDs from the previous steps
-                emailjs.sendForm('service_if43gpd',"template_fvk3t0j", 'form', this)
+                document.getElementById('time').value=new Date();
+                emailjs.sendForm('service_if43gpd', 'template_fvk3t0j', this)
                     .then(() => {
                         console.log('SUCCESS!');
-                        setTest()
+                        alert("Email Sent")
                     }, (error) => {
                         console.log('FAILED...', error);
                     });
             });
         }
     </script>
-    <link rel="stylesheet" href="./output.css">
-    <title>George Cortes' Website</title>
+    <title>George Cortes</title>
 </head>
-<body class="bg-slate-100 ">
-    <header class="h-20  text-3xl flex justify-between items-center p-10 bg-slate-200">
-        <div class="w-12 h-12 ">
-            <img src="./assets/profile-imgs/pngtree-pink-cute-cat-icon-animal-png-yuri-png-image_8188672.png" class="rounded-full">
-        </div>
-        <nav class="lg:flex hidden items-center  gap-5"> 
-            <a  href="/" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Home</a>
-            <a href="#projects"  class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Projects</a>
-            <a href="#about" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">About</a>
-            <a href="#contact" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Contact</a>
+<body class=" text-stone-300 hero ">
+    <header class="bg-zinc-50 border-zinc-200 border-b-2 shadow-md    text-zinc-800 text-xl font-semibold  flex justify-between items-center">
+        <h1 class="text-zinc-800 p-5 ">George Cortes</h1>
+        <nav class="*:underline underline-offset-4 hidden lg:block">
+            <a href="/">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
         </nav>
-        <!-- MOBILE Container -->
-        <div class= "relative lg:hidden ">
-            <i class="fa-solid fa-bars hover:cursor-pointer text-3xl" id="mobileMenuBtn"></i>
-            <!-- Mobile -->
-            <nav id="mobileMenu" class="hidden flex-col items-center gap-5 *:p-4 *:w-full absolute right-[0%] top-[100%] transition-all bg-slate-100 border-2 *:transition-all"> 
-                <a href="/" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Home</a>
-                <a href="#projects" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Projects</a>
-                <a href="#about" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">About</a>
-                <a href="#contact" class=" hover:text-zinc-600 hover:underline hover:underline-offset-4">Contact</a>
+        <div class="relative m-0 ">
+            <i class="fa-solid fa-bars text-3xl mr-5 cursor-pointer " id="hamburger"></i>
+            <nav id="mobileNav" class="absolute hidden text-zinc-50 flex-col right-0 overflow-hidden top-0 bg-zinc-900 h-screen w-72 transition-al duration-75 rounded-tl-lg   ">
+                <i id="innerMenuClose" class="fa-solid fa-x ml-auto  cursor-pointer   mr-10 mt-5 text-3xl pb-5 "></i>
+                <a class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 "  href="/">Home</a>
+                <a  class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 " href="#projects">Projects</a>
+                <a class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 "  href="#contact">Contact</a>
+                <a  class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 " href="#about">About</a>
             </nav>
         </div>
     </header>
-    <main id="home">
-        <!-- hero -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 justify-items-center lg:items-center gap-6 py-10 lg:py-40 lg:px-40 px-24 md:py-16 lg:max-width-[500px] ">
-            <div class="  lg:col-span-6 w-96 h-96 ">
-                <img src="./assets/profile-imgs/pngtree-pink-cute-cat-icon-animal-png-yuri-png-image_8188672.png" class="w-full h-full justify-items-center rounded-full">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-zinc-200 to-zinc-50 text-zinc-800 border-2 border-zinc-50 m-10 bg-center rounded-xl py-20 min-h-screen" id="hero">
+        <div class="container mx-auto text-center">
+          <h1 class="text-6xl md:text-7xl font-bold mb-4 animate-fade-in ">Full Stack Developer</h1>
+          <p class="text-xl mb-6">Building Scalable Apps with React, Node.js & PostgreSql</p>
+          <a href="#projects" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">See My Projects</a>
+          <div class="mt-8 flex justify-center gap-4">
+            <img src="js-icon.svg" alt="JavaScript" class="h-10" />
+            <img src="react-icon.svg" alt="React" class="h-10" />
+            <img src="node-icon.svg" alt="Node.js" class="h-10" />
+          </div>
+          <div class="mt-8 flex justify-center items-center gap-4 text-5xl ">
+            <a  class=" " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-solid fa-file"></i> </a>   
+          </div>
+        </div>
+      </section>
+      <!-- Projects -->
+    <section id="projects" class=" text-zinc-800 bg-zinc-50/95 m-10 md:m-20   min-h-[50vh]  border-indigo-50 py-32 pt-20 px-20  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 rounded-lg justify-items-center   ">
+        <h2 class="py-10 col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center md:text-left">Projects</h2>
+        <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
+            <div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="text-lg font-bold font-sans ">NadoDrive - File Uploader</h2>
+                    <a  class="text-2xl " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="m-auto w-full rounded-lg max-h-52 border-4 bg-[url('./src/assets/topography.svg')] overflow-hidden" >
+                    <img src="./src/assets/topography.svg"  class="w-full">
+                </div>
+                <p class="m-3 ">
+                    A File upload web application with User Authentication. Built with Next.js, Cloudinary API,and PostgreSQL.
+                </p>
+                <div class="m-5 border-t-2 border-b-2 text-sm ">
+                    <span class="text-yellow-400">Javascript</span> |
+                    <span class="text-blue-700">React.js</span> |
+                    <span class="text-neutral-700">PostgreSQl</span> |
+                    <span class="text-blue-700">Next.js</span>
+                </div>
             </div>
-            <!-- Text Side -->
-            <div class=" lg:col-span-6 text-2xl font-semibold text-center gap-6 flex flex-col">
-                <p class="font-normal text-xl ">Hi, i'm</p>
-                <h2 class="text-5xl py-2  ">George Cortes</h2>
-                <h3 class="italic text-3xl text-zinc-600" >Web Developer</h3>
-                <div class="text-xl font-semibold flex gap-5 flex-col justify-center items-center sm:flex-row  ">
-                    <button class=" rounded-3xl shadow-lg p-4 w-44 border-2 border-stone-700 hover:text-slate-50 hover:bg-stone-700"><a href="/assets/files/ResumePDF.pdf" target="_blank">Download CV</a></button>
-                    <a href="#contact"><button class="w-40 shadow-lg bg-stone-800 p-4 rounded-3xl text-slate-50 hover:bg-slate-50 hover:text-stone-700 hover:border-stone-700 hover:border-2 ">Get In Touch</button></a>
+        </article>
+        <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
+            <div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="text-lg font-bold font-sans ">Jewelry Order Management System</h2>
+                    <a  class="text-2xl " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <!-- Icon Links -->
-                <div class=" flex gap-6 text-5xl justify-center "> 
-                    <a href="https://github.com/GeoCort"><i class="fa-brands fa-github hover:text-stone-500 hover:scale-105"></i></a>
-                    <a href="https://www.linkedin.com/in/george-cortes-685293264/"><i class="fa-brands fa-linkedin hover:text-stone-500 hover:scale-105"></i></a>
-                    <a href="https://x.com"><i class="fa-brands fa-twitter hover:text-stone-500 hover:scale-105"></i></a>
+                <div class="m-auto w-full rounded-lg max-h-52 border-4 bg-[url('./src/assets/topography.svg')] overflow-hidden" >
+                    <img src="./src/assets/topography.svg"  class="w-full">
+                </div>
+                <p class="m-3 ">
+                    A File upload web application with User Authentication. Built with Next.js, Cloudinary API,and PostgreSQL.
+                </p>
+                <div class="m-5 border-t-2 border-b-2 text-sm ">
+                    <span class="text-yellow-400">Javascript</span> |
+                    <span class="text-blue-700">Express.js</span> |
+                    <span class="text-blue-700">Ejs</span> |
+                    <span class="text-nuetral-700">PostgreSQL</span>
                 </div>
             </div>
-        </section>
-        <!-- Projects -->
-        <h2 id="projects" class="text-center text-stone-700 text-4xl font-bold py-10 row-span-1">Projects</h2>
-        <section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12  gap-10 mx-[10%] " >
-            <!-- Cards -->
-            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
-                <!-- img -->
-                <div class="container ">
-                    <img src="/assets/project-images/chirpyAI.webp " class="rounded-t-lg w-full md:h-60  xl:h-72  object-cover">
+        </article>
+        <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
+            <div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="text-lg font-bold font-sans ">NadoDrive - File Uploader</h2>
+                    <a  class="text-2xl " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <div class="p-5 text-slate-800">
-                    <h4 class="text-xl font-semibold">Chirpy</h4>
-                    <p class="text-md min-h-28">Twitter Clone using React.js, PostgreSQL, Tailwind.CSS and Node.js</p>
-                    <!-- style tab  -->
-                    <div class="flex justify-between items-center">
-                        <span class="italic font-semibold  text-yellow-600 text-center px-2 py-1">Javascript</span>
-                        <div class="flex text-4xl ">
-                            <a href="https://github.com/GeoCort/Chirpy"><i class="fa-brands fa-github text-5xl hover:text-yellow-600"></i></a>
-                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
-                        </div>
-                    </div>
+                <div class="m-auto w-full rounded-lg max-h-52 border-4 bg-[url('./src/assets/topography.svg')] overflow-hidden" >
+                    <img src="./src/assets/topography.svg"  class="w-full">
                 </div>
-            </article>
-            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
-                <!-- img -->
-                <div class="container ">
-                    <img src="/assets/project-images/falcon.webp " class="rounded-t-lg w-full md:h-60  xl:h-72  object-cover">
+                <p class="m-3 ">
+                    A File upload web application with User Authentication. Built with Next.js, Cloudinary API,and PostgreSQL.
+                </p>
+                <div class="m-5 border-t-2 border-b-2 text-sm ">
+                    <span class="text-yellow-400">Javascript</span> |
+                    <span class="text-blue-700">React</span> |
+                    <span class="text-neutral-700">PostgresQl</span> |
+                    <span class="text-blue-700">Next.js</span>
                 </div>
-                <div class="p-5 text-slate-800">
-                    <h4 class="text-xl font-semibold">Falcons Nest</h4>
-                    <p class="text-md min-h-28">A Single Page Application using React for Frontend and Express on the backend. Utilizes PostgreSQL and Prisma ORM for data.</p>
-                    <!-- style tab  -->
-                    <div class="flex justify-between items-center">
-                        <span class="italic font-semibold  text-yellow-600 text-center px-2 py-1">Javascript</span>
-                        <div class="flex text-4xl ">
-                            <a href="https://taupe-griffin-f3f2c9.netlify.app/authors"><i class="fa-brands fa-github text-5xl hover:text-yellow-600"></i></a>
-                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
-                        </div>
-                    </div>
-                </div>
-            </article>
-             <!-- card  -->
-            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
-                <!-- img -->
-                <div class="container ">
-                    <img src="/assets/project-images/craftify.jpeg " class="rounded-t-lg w-full md:h-60 xl:h-72  object-cover">
-                </div>
-                <div class="p-5 text-slate-800">
-                    <h4 class="text-xl font-semibold">Craftify</h4>
-                    <p class="text-md min-h-28">Reddit Clone for Android coded in Java. Scrum </p>
-                    <!-- style tab  -->
-                    <div class="flex justify-between items-center">
-                        <span class="italic font-semibold  text-green-700 text-center px-2 py-1">Android | Kotlin</span>
-                        <div class="flex text-4xl ">
-                            <a href="https://github.com/GeoCort/Group3Craftify"><i class="fa-brands fa-github text-5xl hover:text-green-900"></i></a>
-                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <!--  -->
-            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all ">
-                <!-- img -->
-                <div class="container ">
-                    <img src="/assets/project-images/hellhole.webp " class="rounded-t-lg w-full md:h-60  xl:h-72  object-cover">
-                </div>
-                <div class="p-5 text-slate-800">
-                    <h4 class="text-xl font-semibold">HellHoleIO</h4>
-                    <p class="text-md min-h-28">GoogleDrive clone with User Authentication, Postgres Database and Express framework. </p>
-                    <!-- style tab  -->
-                    <div class="flex justify-between items-center">
-                        <span class="italic font-semibold  text-yellow-600 text-center px-2 py-1">Javascript</span>
-                        <div class="flex text-4xl ">
-                            <a href="https://github.com/GeoCort/HellHoleIO/"><i class="fa-brands fa-github text-5xl hover:text-yellow-600"></i></a>
-                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <!-- card -->
-            <article class="flex flex-col bg-stone-100 rounded-lg shadow-lg md:col-span-2 lg:col-span-4 hover:scale-110 transition-all">
-                <div class="container ">
-                    <img src="/assets/project-images/logo.png " class="rounded-t-lg w-full  md:h-60  xl:h-72  object-cover">
-                </div>
-                <div class="p-5 text-slate-800">
-                    <h4 class="text-xl font-semibold">Members Only</h4>
-                    <p class="text-md min-h-28">Authentication Message web application. Using Postgres SQL, Express, Javascript and Tailwind CSS. </p>
-                    <!-- style tab  -->
-                    <div class="flex justify-between p-2 items-center">
-                        <span class="italic font-semibold  text-yellow-600 text-center px-2 py-1">Javascript</span>
-                        <div class="flex gap-7 text-4xl items-center">
-                            <a href="https://members-only-george-cortes-9346328e9250.herokuapp.com"><i class="fa-brands fa-github text-5xl hover:text-yellow-600"></i></a>
-                            <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
-                        </div>
-                    </div>
-                </div>
-                
-            </article>
-        </section>
-        <!-- About -->
-         <section class=" lg:mx-[10%] py-12 pb-6" id="about">
-            <h4 class="text-center text-zinc-600">Get to know more</h4>
-            <h2 class="text-center text-stone-700 text-4xl font-bold py-5">About Me</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  ">
-                <!-- about image -->
-                <article class=" col-span-1 md:col-span-2 lg:col-span-1 bg-zinc-700 max-w-[80%] m-auto lg:max-w-full rounded-lg">
-                    <img src="assets/profile-imgs/aboutMeimg.jpeg" class="max-w-96 rounded-lg  ">
+            </div>
+        </article>
+    </section>
+    <!-- About -->
+     <section class=" m-10 bg-gradient-to-r from-zinc-500 to-zinc-900 p-10 pl-14 rounded-lg grid grid-cols-1 lg:grid-cols-2">
+
+        <!-- About me p1 -->
+        <div class="grid-cols-1 flex flex-col gap-5">
+            <h2 class="text-5xl font-bold text-zinc-50">About Me</h2>
+            <img class="rounded-lg min-w-96 max-w-[600px]" src="/assets/placeholder.webp"/>
+        </div>
+        <!-- About me p2  -->
+        <div class="grid-cols-1 flex flex-col gap-10 m-5  ">
+            <!-- Education -->
+            <section class=" flex gap-5 justify-center flex-col  md:flex-row items-center">
+                <article class="border-[3px] w-full m-w-1/2   h-48 p-5  rounded-xl  max-w-80 flex flex-col gap-2  justify-center items-center "> 
+                    <span class="text-3xl font-bold ">B.S.</span>
+                    <span class="text-2xl font-bold">Computer Science</span>
+                    <i class="fa-solid fa-award text-4xl  "></i>   
+                    <span class="text-2xl font-bold">Dec 2024</span>
                 </article>
-                <!-- experience -->
-                <div class="col-span-1 md:col-span-2  m-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:col-span-2  ">
-                    <article class="border-4 border-stone-400 rounded-lg p-5 col-span-1 gap-10  text-center m-auto h-full">
-                        <i class="fa-solid fa-briefcase text-5xl text-stone-700"></i>
-                        <h5 class="italic text-2xl ms:text-3xl text-zinc-600 p-2 text-center">Experience</h5>
-                        <p class="text-xl font-semibold">Web: Javascript, Python,  Node.js, Express, React, Postgress, Prisma ORM </p>
-                        <p class="text-xl font-semibold">Android: Kotlin, Java </p>
-                    </article>
-                    <article class="border-4 border-stone-400 rounded-md p-5 col-span-1 text-center text-lg m-auto h-full w-full">
-                        <i class="fa-solid fa-award text-5xl text-stone-700"></i>
-                        <h5 class="italic  text-zinc-600 p-2 text-center text-2xl ms:text-3xl">Education</h5>
-                        <p class="text-xl font-semibold">B.S. in Computer Science</p>
-                        <p class="text-xl font-semibold">A.A. in Business Administration</p>
-                    </article>
-                </div>
-            </div>
-         </section>
-        <!-- Contact -->
-         <section class="p-10 shadow-lg" id="contact">
-            <h2 class="text-center text-stone-700 text-4xl font-bold py-5">Contact Me</h2>
-            <form id="form" class="bg-slate-200  shadow-xl rounded-lg p-10 xl:p-14 w-10/12 xl:w-2/4 m-auto text-xl font-semibold text-black  *:py-2">
-                <div class="flex flex-col gap-2">
-                    <label>Name</label>
-                    <input class="p-2 px-2 rounded-md  " type="text" placeholder="Name" required max="50"> 
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label> Email</label>
-                    <input class="p-2 px-2 rounded-md " type="email" name="email" placeholder="John@Appleseed.com" required max="100">
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label>Message</label>
-                    <textarea name="message" class="rounded-lg p-2  " rows="10" cols="50"></textarea>
-                </div>
-                <button id="contactBtn" type="submit" class=" rounded-xl w-full hover:bg-slate-50 hover:text-black mt-[20px] bg-slate-800 text-white"> Submit</button>
-            </form>
-         </section>
-        <!-- Footer -->
-         <footer class="bg-slate-200 p-10">
-            <h6 class="text-center">Thank you for visiting!</h6>
-         </footer>
-    </main>
-    <script src="./script.js"></script>
-    <script src="./src/main.js"></script>
+                <article class="border-[3px] w-full m-w-1/2 h-48 p-5  rounded-xl  max-w-80 flex flex-col gap-2  justify-center items-center "> 
+                    <span class="text-3xl font-bold ">A.A.</span>
+                    <span class="text-2xl font-bold">Business Administration</span>
+                    <i class="fa-solid fa-award text-4xl  "></i>   
+                    <span class="text-2xl font-bold">Dec 2024</span>
+                </article>
+            </section>
+            <div class="h-[4px] bg-zinc-100"></div>
+            <article class="mx-10 text-lg font-semibold text-center md:text-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque molestias, facilis distinctio ducimus, fugiat sed voluptas molestiae maiores cum architecto dolorem unde ipsum nesciunt adipisci, totam velit itaque dolor voluptate.
+                Dolor, rerum quae explicabo maxime ducimus suscipit quisquam possimus amet consectetur incidunt autem aliquid! Doloremque, maiores doloribus. Esse, est a quia blanditiis harum veritatis libero vitae. Vitae magnam aperiam molestiae!
+            </article>
+        </div>
+     </section>
+     <!-- Contact -->
+      <section id="contact" class=" max-h-screen mb-20  m-10 rounded-lg">
+        <form id="contact-form" class="flex flex-col w-full p-10 py-32 bg-zinc-50 text-zinc-800 max-w-[1000px] mx-auto rounded-lg shadow-2xl">
+        <h2 class="pt-10  col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center ">Contact Me</h2>
+            
+            <!-- To simplify the tutorial, the value is static. -->
+            <input class="border-2 p-2 rounded-md  " type="hidden" id="time" name="time" >
+            <label>Name</label>
+            <input class="border-2 p-2 rounded-md  " type="text" name="name" required>
+            <label>Email</label>
+            <input class="border-2 p-2 rounded-md  " type="email" name="email" required>
+            <label>Subject</label>
+            <input class="border-2 p-2 rounded-md  " type="text" name="title" required>
+            <label>Message</label>
+            <textarea name="message" required class="border-2" rows="10"></textarea>
+            <button type="submit" class="bg-zinc-800 text-slate-50 py-3 font-semibold mx-[30%] mt-5 rounded-md ">Submit</button>
+        </form>
+      </section>
+      <!-- Footer -->
+      <footer class="bg-zinc-50 py-6 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-zinc-600 text-sm">
+          <p>&copy; 2025 George Cortes. All rights reserved.</p>
+          <div class="mt-2 sm:mt-0 flex space-x-4">
+            <a href="https://github.com/GeoCort" class="hover:text-zinc-900">GitHub</a>
+            <a href="#" class="hover:text-zinc-900">LinkedIn</a>
+            <a href="#contact" class="hover:text-zinc-900">Contact</a>
+          </div>
+        </div>
+      </footer>
+      <script src="./src//navScripts.js"></script>
 </body>
 </html>

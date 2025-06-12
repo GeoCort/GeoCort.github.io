@@ -1,18 +1,27 @@
 {
-  "name": "geocort.github.io",
+  "name": "geocort",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeoCort/GeoCort.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.4.12"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GeoCort/GeoCort/issues"
   },
+  "homepage": "https://github.com/GeoCort/GeoCort#readme",
+  "description": "",
   "dependencies": {
-    "emailjs": "^4.0.3"
+    "@tailwindcss/cli": "^4.1.4",
+    "emailjs": "^4.0.3",
+    "tailwindcss": "^4.1.4"
   }
 }

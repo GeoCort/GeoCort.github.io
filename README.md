@@ -1,1 +1,0 @@
-# GeoCort.github.io
