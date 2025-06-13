@@ -36,19 +36,20 @@
             });
         }
     </script>
-    <title>George Cortes</title>
+    <title>George Cortes' Website</title>
 </head>
-<body class=" text-stone-300 hero ">
-    <header class="bg-zinc-50 border-zinc-200 border-b-2 shadow-md    text-zinc-800 text-xl font-semibold  flex justify-between items-center">
+<body class=" text-stone-300 bg-zinc-50">
+    <header class="bg-zinc-50 border-zinc-200 border-b-2 shadow-md  text-zinc-800 text-xl font-semibold  flex justify-between items-center">
         <h1 class="text-zinc-800 p-5 ">George Cortes</h1>
-        <nav class="*:underline underline-offset-4 hidden lg:block">
+        <!-- Larger Screen Sizes -->
+        <nav class="*:underline underline-offset-4 hidden lg:flex lg:mr-5 gap-5">
             <a href="/">Home</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </nav>
-        <div class="relative m-0 ">
-            <i class="fa-solid fa-bars text-3xl mr-5 cursor-pointer " id="hamburger"></i>
+        <div class=" relative m-0 lg:hidden ">
+            <i class="fa-solid fa-bars text-3xl mr-5 cursor-pointer md:hidden" id="hamburger"></i>
             <nav id="mobileNav" class="absolute hidden text-zinc-50 flex-col right-0 overflow-hidden top-0 bg-zinc-900 h-screen w-72 transition-al duration-75 rounded-tl-lg   ">
                 <i id="innerMenuClose" class="fa-solid fa-x ml-auto  cursor-pointer   mr-10 mt-5 text-3xl pb-5 "></i>
                 <a class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 "  href="/">Home</a>
@@ -59,25 +60,27 @@
         </div>
     </header>
     <!-- Hero -->
-    <section class="bg-gradient-to-r from-zinc-200 to-zinc-50 text-zinc-800 border-2 border-zinc-50 m-10 bg-center rounded-xl py-20 min-h-screen" id="hero">
-        <div class="container mx-auto text-center">
-          <h1 class="text-6xl md:text-7xl font-bold mb-4 animate-fade-in ">Full Stack Developer</h1>
-          <p class="text-xl mb-6">Building Scalable Apps with React, Node.js & PostgreSql</p>
-          <a href="#projects" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">See My Projects</a>
-          <div class="mt-8 flex justify-center gap-4">
-            <img src="js-icon.svg" alt="JavaScript" class="h-10" />
-            <img src="react-icon.svg" alt="React" class="h-10" />
-            <img src="node-icon.svg" alt="Node.js" class="h-10" />
+     <div class="hero flex flex-col   ">
+    <section class="bg-gradient-to-r h-[80vh] from-white  to-zinc-50 text-zinc-800 border-2 border-zinc-50 mx-10 mt-10  bg-center rounded-xl  max-h-screen" id="hero">
+        <div class=" flex flex-col gap-5 justify-center text-center   h-full ">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in ">Full Stack Developer</h1>
+          <p class="text-lg md:text-xl">Building Scalable Apps with React, Node.js & PostgreSql</p>
+            <div class=" flex justify-center gap-4 bg-purple-50 bg-purple-200 w-max mx-auto px-2 py-2 rounded-lg ">
+            <img src="/src/assets/jsicons/js-icon.svg" alt="JavaScript" class="h-10" />
+            <img src="/src/assets/jsicons/react-icon.svg" alt="React" class="h-10" />
+            <img src="/src/assets/jsicons/node-icon.svg" alt="Node.js" class="h-10" />
           </div>
-          <div class="mt-8 flex justify-center items-center gap-4 text-5xl ">
-            <a  class=" " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-solid fa-file"></i> </a>   
+          <a href="#projects" class="bg-green-500 text-white px-4 py-2  rounded-full hover:bg-green-600 transition w-1/2 max-w-50  mx-auto ">See My Projects</a>
+          <div class=" border-1 w-1/3  mx-auto   "></div>
+          <div class="flex justify-center items-center gap-4 text-white text-4xl  gap-4 bg-green-500 w-max mx-auto  rounded-lg p-4       ">
+            <a class=" " href="https://github.com/geocort/"><i class="fa-brands fa-github hover:text-zinc-700"></i></a>
+            <a class=" "  href="#"><i class="fa-brands fa-linkedin hover:text-zinc-700"></i></a>
+            <a class=" "  href="#"><i class="fa-solid fa-file hover:text-zinc-700"></i> </a>   
           </div>
         </div>
       </section>
       <!-- Projects -->
-    <section id="projects" class=" text-zinc-800 bg-zinc-50/95 m-10 md:m-20   min-h-[50vh]  border-indigo-50 py-32 pt-20 px-20  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 rounded-lg justify-items-center   ">
+    <section id="projects" class=" text-zinc-800 bg-zinc-50/95 m-10 min-h-[50vh]  border-indigo-50 py-32 pt-20 px-20  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 rounded-lg justify-items-center   ">
         <h2 class="py-10 col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center md:text-left">Projects</h2>
         <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
             <div>
@@ -173,8 +176,8 @@
         </div>
      </section>
      <!-- Contact -->
-      <section id="contact" class=" max-h-screen mb-20  m-10 rounded-lg">
-        <form id="contact-form" class="flex flex-col w-full p-10 py-32 bg-zinc-50 text-zinc-800 max-w-[1000px] mx-auto rounded-lg shadow-2xl">
+      <section id="contact" class=" min-h-screen mb-20  m-10 rounded-lg">
+        <form id="contact-form" class="flex flex-col  w-full p-10 py-28 bg-zinc-50 text-zinc-800 max-w-[1000px] mx-auto rounded-lg shadow-2xl">
         <h2 class="pt-10  col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center ">Contact Me</h2>
             
             <!-- To simplify the tutorial, the value is static. -->
@@ -190,14 +193,15 @@
             <button type="submit" class="bg-zinc-800 text-slate-50 py-3 font-semibold mx-[30%] mt-5 rounded-md ">Submit</button>
         </form>
       </section>
+     </div>
       <!-- Footer -->
-      <footer class="bg-zinc-50 py-6 border-t border-zinc-200">
+      <footer class="bg-zinc-50 py-6 border-t border-zinc-200 border-4 border-black   ">
         <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-zinc-600 text-sm">
           <p>&copy; 2025 George Cortes. All rights reserved.</p>
           <div class="mt-2 sm:mt-0 flex space-x-4">
-            <a href="https://github.com/GeoCort" class="hover:text-zinc-900">GitHub</a>
-            <a href="#" class="hover:text-zinc-900">LinkedIn</a>
-            <a href="#contact" class="hover:text-zinc-900">Contact</a>
+              <a target="_blank" href="https://www.linkedin.com/in/george-cortes-685293264/" class="hover:text-zinc-900">LinkedIn</a>
+              <a target="_blank" href="https://github.com/GeoCort" class="hover:text-zinc-900">GitHub</a>
+            <a target="_blank" href="#contact" class="hover:text-zinc-900">Contact</a>
           </div>
         </div>
       </footer>
